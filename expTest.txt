@@ -1,0 +1,30 @@
+Start
+Most large code bases have at least two branches - a ‘live’ branch and a ‘development’ branch. The live branch is code which is OK to be deployed on to a website, or downloaded by customers. The development branch allows developers to work on features which might not be bug free. Only once everyone is happy with the development branch would it be merged with the live branch.
+
+1. Create a branch
+Creating a branch in Git is easy. The git branch command, when used by itself, will list the branches you currently have
+
+> git branch
+The * should indicate the current branch you are on, which is master.
+
+If you wish to start another branch, use git checkout -b (new-branch-name) :
+
+> git checkout -b exp1
+Try git branch again to check which branch you are currently on:
+
+> git branch
+  exp1
+* master
+The new branch is now created. Now let’s work in that branch. To switch to the new branch:
+
+> git checkout exp1
+git checkout (branch-name) is used to switch branches.
+
+Let’s perform some commits now. Create test.txt file and put 'some content' inside it,
+
+> git add test.txt
+> git commit -m "Added experimental txt"
+Now, let’s compare them to the master branch. Use git diff
+
+> git diff master
+Basically what the above output says is that test.txt is present on the exp1 branch, but is absent on the master branch.
